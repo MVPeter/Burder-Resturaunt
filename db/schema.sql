@@ -3,12 +3,12 @@ DROP DATABASE IF EXISTS eatburgers_db;
 
 
 
--- Create the database employeesDB and specified it for use.
+-- Create the database eatburger and specified it for use.
 CREATE DATABASE eatburgers_db;
 
 USE eatburgers_db;
 
--- Create the department Table
+-- Create the burger Table
 CREATE TABLE burger (
     id INT NOT NULL AUTO_INCREMENT,
     burger_name varchar(50),

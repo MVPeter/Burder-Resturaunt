@@ -2,31 +2,27 @@ const connection = require('./connection.js');
 
 // Object Relational Mapper (ORM)
 
-// The ?? signs are for swapping out table or column names
-// The ? signs are for swapping out other values
-// These help avoid SQL injection
-// https://en.wikipedia.org/wiki/SQL_injection
 const orm = {
-    all(tableInput, colToSearch, valOfCol, orderCol) {
-        const queryString = 'SELECT * FROM ?? WHERE ?? = ? ORDER BY ?? DESC';
+    all(tableInput, cb) {
+        const queryString = 'SELECT * FROM ??;';
         connection.query(
             queryString,
-            [tableInput, colToSearch, valOfCol, orderCol],
+            [tableInput],
             (err, result) => {
-                if (err) throw err;
+                if (err) {throw err;}
                 console.log(result);
             }
         );
     },
 
-    selectEaten(whatToSelect, table, orderCol) {
-        const queryString = 'SELECT ?? FROM ?? ORDER BY ?? DESC';
+    create(table, col1, col2, val1, val2 cb) {
+        const queryString = 'INSERT INTO ?? (??, ??) VALUES (?, ?)';
         console.log(queryString);
         connection.query(
             queryString,
-            [whatToSelect, table, orderCol],
+            [table, col1, col2, val1, val2],
             (err, result) => {
-                if (err) throw err;
+                if (err) {throw err;}
                 console.log(result);
             }
         );
