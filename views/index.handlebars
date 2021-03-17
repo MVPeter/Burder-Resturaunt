@@ -1,19 +1,21 @@
-<h1> Burders</h1>
-
-<h2> Uneaten burers</h2>
-
+<h1> Burgers</h1>
 <ul>
-    {{#each burger}}
+    {{#each burgers}}
     {{#unless eaten}}
-    {{> burger/eaten=true}}
+    {{>eaten/burgers-eaten eaten=true}}
     {{/unless}}
     {{/each}}
 </ul>
 
+<div class="col-xs-1-12">
+    
+</div>
+<h2> Uneaten burgers</h2>
+
 <ul>
     {{#each burger}}
     {{#if eaten}}
-    {{> burger/eaten=false}}
+    {{>eaten/burgers-eaten eaten=false}}
     {{/if}}
     {{/each}}
 </ul>

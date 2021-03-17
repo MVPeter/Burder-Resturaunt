@@ -5,17 +5,16 @@ const connection = require('./connection.js');
 const orm = {
     all(tableInput, cb) {
         const queryString = 'SELECT * FROM ??;';
-        connection.query(
-            queryString,
+        connection.query(queryString,
             [tableInput],
             (err, result) => {
                 if (err) {throw err;}
-                console.log(result);
+                cb(result);
             }
         );
     },
 
-    create(table, col1, col2, val1, val2 cb) {
+    create(table, col1, col2, val1, val2, cb) {
         const queryString = 'INSERT INTO ?? (??, ??) VALUES (?, ?)';
         console.log(queryString);
         connection.query(
@@ -23,19 +22,19 @@ const orm = {
             [table, col1, col2, val1, val2],
             (err, result) => {
                 if (err) {throw err;}
-                console.log(result);
+                cb(result);
             }
         );
     },
 
-    update(tableInput, objColVals, condition, valOfCol) {
-        const queryString = 'UPDATE ?? SET ?? WHERE ?? = ?';
+    update(tableInput, objColVals, condition, cb) {
+        const queryString = 'UPDATE ?? SET ?? WHERE id = ?';
         console.log(queryString);
         connection.query(queryString,
-            [tableInput, objColVals, condition, valOfCol],
+            [tableInput, objColVals, condition ],
             (err, result) => {
                 if (err) throw err;
-                console.log(result);
+                cb(result);
 
             })
     }

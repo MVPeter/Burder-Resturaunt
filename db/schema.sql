@@ -12,7 +12,7 @@ USE eatburgers_db;
 CREATE TABLE burger (
     id INT NOT NULL AUTO_INCREMENT,
     burger_name varchar(50),
-    eaten BOOLEAN, 
+    eaten BOOLEAN DEFAULT false, 
 
     PRIMARY KEY (id)
 );

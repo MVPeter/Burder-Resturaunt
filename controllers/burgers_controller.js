@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
         const burgerObject = {
             burgers: data,
         };
-        console.table('burgerObject', burgerObject);
+        // console.log('burgerObject', burgerObject);
+        console.log(burgerObject);
         res.render('index', burgerObject);
     });
 });
@@ -22,9 +23,11 @@ router.post('/api/burger', (req, res) => {
     });
 });
 
-// //put route
-// router.put('/api/burger/:id', (req, res) => {
-//     const 
-// })
+// put route
+router.put('/api/burger/:id', (req, res) => {
+    console.log(req.body.eaten)
+   
+    // burger.update (["burger", req.params.id ])
+})
 
 module.exports = router;
