@@ -19,3 +19,19 @@ $(".bbuttons").on("click", function(event) {
     
 
 })
+
+$(".cbutton").on("click", function(event) {
+    event.preventDefault()
+    let nBurger = $('#nBurger').val();
+    console.log(nBurger);
+    $.ajax("/api/newBurger/", {
+        method: "POST",
+        data: {"burger_name": nBurger}
+    }).then(
+        () => {
+            console.log("completed")
+            // location.reload()
+        }
+    )
+
+});

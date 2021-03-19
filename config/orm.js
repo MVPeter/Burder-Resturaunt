@@ -14,19 +14,24 @@ const orm = {
         );
     },
 
-    create(table, col1, col2, val1, val2, cb) {
-        const queryString = 'INSERT INTO ?? (??, ??) VALUES (?, ?)';
-        console.log(queryString);
+    //Table is Burger
+    //cols1 is burger_name
+    //vals1 is new burger name
+    create(table, cols1, vals1, cb) {
+        const queryString = 'INSERT INTO ?? (??) VALUES (?)';
         connection.query(
             queryString,
-            [table, col1, col2, val1, val2],
+            [table, cols1, vals1],
             (err, result) => {
                 if (err) { throw err; }
                 cb(result);
             }
-        );
+            );
+            console.log(queryString);
     },
 
+    //objColVals is eaten status
+    //condition is ture/false
     updateEaten(objColVals, condition, cb) {
         let queryString = 'UPDATE burger SET eaten = ? WHERE id = ?';
         // console.log(queryString);

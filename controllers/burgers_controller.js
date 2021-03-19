@@ -17,9 +17,11 @@ router.get('/', (req, res) => {
 });
 
 //post route
-router.post('/api/burger', (req, res) => {
-    burger.create(['burger', 'eaten'], [req.body.burger, req.body.eaten], (result) => {
-        res.json({ id: result.insertId });
+router.post('/api/newBurger', (req, res) => {
+    let createBurger = req.body.burger_name.trim()
+    console.log(createBurger)
+    burger.create([createBurger], (result) => {
+        res.send('POST complete');
     });
 });
 
