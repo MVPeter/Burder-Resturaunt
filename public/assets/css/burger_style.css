@@ -1,0 +1,37 @@
+body {
+    background-image: linear-gradient(to top, white, rgb(86, 163, 223));
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.navbartext {
+    color: white;
+    font-size: 60px;
+    font-weight:bolder;
+}
+
+h1 {
+    background-color:rgb(33, 130, 204);
+    color:rgb(255, 255, 255)
+}
+
+li {
+    padding:6px;
+    margin: 6px;
+    background: #cbdd9c73;
+}
+
+.bbuttons {
+    background-color: rgb(68, 209, 129);
+    color:rgb(6, 29, 47);
+    border-radius: 12px;
+    margin: 0px;
+    float: right;
+    
+}
+
+.cbutton {
+    background-color: rgb(230, 63, 63);
+    color:rgb(6, 29, 47);
+    border-radius: 12px;
+
+}
