@@ -27,14 +27,13 @@ const orm = {
                 cb(result);
             }
             );
-            console.log(queryString);
+            
     },
 
     //objColVals is eaten status
     //condition is ture/false
     updateEaten(objColVals, condition, cb) {
         let queryString = 'UPDATE burger SET eaten = ? WHERE id = ?';
-        // console.log(queryString);
         connection.query(queryString,
             [objColVals, condition],
             (err, result) => {
